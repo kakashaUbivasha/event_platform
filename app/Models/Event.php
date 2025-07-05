@@ -26,4 +26,16 @@ class Event extends Model
     {
         return $this->belongsToMany(User::class, 'subscriptions')->withPivot('role', 'created_at');
     }
+    public function attachments()
+    {
+        return $this->hasMany(Attachment::class);
+    }
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
+    }
+    public function polls()
+    {
+        return $this->hasMany(Poll::class);
+    }
 }
