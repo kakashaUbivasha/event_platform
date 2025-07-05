@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Attachment extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function events()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }
