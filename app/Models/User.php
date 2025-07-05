@@ -48,7 +48,7 @@ class User extends Authenticatable
     }
     public function subscriptions()
     {
-        return $this->belongsToMany(Subscription::class);
+        return $this->belongsToMany(Event::class, 'subscriptions')->withPivot('role', 'created_at');
     }
     public function friends()
     {
