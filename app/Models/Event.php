@@ -24,7 +24,7 @@ class Event extends Model
     }
     public function subscribers()
     {
-        return $this->belongsToMany(User::class, 'subscriptions')->withPivot('role', 'created_at');
+        return $this->hasMany(User::class, 'subscriptions')->withPivot('role', 'created_at');
     }
     public function attachments()
     {
