@@ -25,4 +25,8 @@ class AuthController extends Controller
         }
         return response(['user' => $user, 'token' => $token]);
     }
+    public function register()
+    {
+
+    }
 }
