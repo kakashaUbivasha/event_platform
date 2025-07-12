@@ -32,4 +32,9 @@ class AuthController extends Controller
         User::create($data);
         return response(['message' => 'User successfully registered'], 201);
     }
+    public function logout(Request $request)
+    {
+        $request->user()->tokens()->delete();
+        return response(['message' => 'User successfully logged out']);
+    }
 }
